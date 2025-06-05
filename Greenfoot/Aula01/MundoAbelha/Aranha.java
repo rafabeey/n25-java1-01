@@ -17,5 +17,10 @@ public class Aranha extends Actor
         // Add your action code here.
         move(1);
         turn(10-Greenfoot.getRandomNumber(20));
+        if (getX()>getWorld().getWidth()/2 &&
+        getY()>getWorld().getHeight()/2){
+            move(2);
+            
+        }
     }
 }

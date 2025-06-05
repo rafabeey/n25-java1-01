@@ -1,19 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * Definição da classe BeeWorld:
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Rafael Lopes 
+ * @version 2025-06-04
  */
-public class MyWorld extends World
+public class BeeWorld extends World
 {
 
     /**
-     * Constructor for objects of class MyWorld.
+     * Constructor for objects of class BeeWorld.
      * 
      */
-    public MyWorld()
+    public BeeWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
