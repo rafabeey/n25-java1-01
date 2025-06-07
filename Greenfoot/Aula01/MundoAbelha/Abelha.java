@@ -8,6 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Abelha extends Actor
 {
+    // Definindo os fields
+    int vidas;
+    int score;
+    int PONTOS = 100;
+    //Definindo o constructor
+    /**
+     * Constructor da Classe Abelha
+     */
+    public Abelha (){
+        vidas = 3; //vai ter 3 vidas
+        score = 0;
+    }
     /**
      * Act - do whatever the Abelha wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -23,6 +35,8 @@ public class Abelha extends Actor
             turn(5);
         }
         verificarPosicao();
+        capturarMosca();
+        serCapturadoPelaAranha();
     }
     
     public void verificarPosicao(){
@@ -68,5 +82,52 @@ public class Abelha extends Actor
     public boolean estaNaDireita(){
         return getX()>getWorld().getWidth()-10;
         
+    }
+    
+    public void capturarMosca(){
+        if (isTouching(Mosca.class)){
+            removeTouching(Mosca.class);
+            Greenfoot.playSound("slurp.wav");
+            atualizarScore ();
+            //vai de 1 a 800
+            int posx = Greenfoot.getRandomNumber(getWorld().getWidth()) + 1;
+            //Vai de 1 a 600
+            int posy = Greenfoot.getRandomNumber(getWorld().getHeight()) + 1;
+            //Criando a mosca
+            Mosca mosca = new Mosca();
+            //Colocando no mundo na posição x, y
+            getWorld().addObject(mosca,posx,posy);
+
+    
+        }
+    }
+    
+    public void capturarMosca2(){
+        Actor mosca = getOneIntersectingObject(Mosca.class);
+        if (mosca !=null){
+            getWorld().removeObject(mosca);
+        }{
+            
+        }
+    }
+    
+    public void serCapturadoPelaAranha(){
+        if (isTouching(Aranha.class)){
+            int posx = Greenfoot.getRandomNumber(getWorld().getWidth()) + 1;
+            //Vai de 1 a 600
+            int posy = Greenfoot.getRandomNumber(getWorld().getHeight()) + 1;
+            setLocation(posx, posy);
+            Greenfoot.playSound("ouch.wav");
+            vidas --;//vidas - vidas - 1
+            if (vidas<-0){
+                getWorld().showText("GAME OVER", 400, 300);
+                Greenfoot.stop();
+            }
+        }
+    }
+    
+    public void atualizarScore(){
+        score += PONTOS; //score - score + PONTOS
+        getWorld().showText("Score: " + score, 100,10);
     }
 }

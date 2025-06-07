@@ -15,5 +15,16 @@ public class Duke extends Actor
     public void act()
     {
         // Add your action code here.
+        if (Greenfoot.mouseClicked(this)){
+            Greenfoot.playSound("ouch.wav");
+            Greenfoot.ask("Digite seu nome:");
+    
+        }
+        //Obtem informações sobre o mouse se teve ações
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+        //Button 1 = esquerdo; 2 = centro, 3 = direito
+        if (mouse != null && mouse.getButton() == 3){
+            setLocation(mouse.getX(), mouse.getY());
+        }
     }
 }
