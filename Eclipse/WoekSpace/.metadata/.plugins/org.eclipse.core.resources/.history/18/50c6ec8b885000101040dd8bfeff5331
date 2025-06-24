@@ -1,0 +1,16 @@
+package br.com.senaisp.bauru.aula06;
+
+public class Exemplo07 {
+
+	public static void main(String[] args) {
+		//Erro de sintaxe
+		int x=1, y=2;
+		if (x==y) {
+			System.out.println("Aqui tem erro de sintaxel");
+		}
+        if (x<y);{
+        	System.out.println("X é menor que Y");
+        }
+	}
+
+}

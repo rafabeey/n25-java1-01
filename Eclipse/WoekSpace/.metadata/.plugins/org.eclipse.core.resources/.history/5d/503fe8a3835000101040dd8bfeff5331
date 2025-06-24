@@ -1,0 +1,14 @@
+package br.com.senaisp.bauru.aula06;
+
+public class Exemplo07 {
+
+	public static void main(String[] args) {
+		//Erro de sintaxe
+		int x=1, y=2;
+		if (x==y) {
+			System.out.printlin("Aqui tem erro de sintaxel");
+		}
+
+	}
+
+}
