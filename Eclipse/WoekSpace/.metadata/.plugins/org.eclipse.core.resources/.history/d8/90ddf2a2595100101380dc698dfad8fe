@@ -1,0 +1,33 @@
+package br.com.senaisp.bauru.aula07;
+
+import java.util.Random;
+
+public class Baralho {
+   private Carta[] cartas;
+   private boolean[] cartaRetirada;
+   private Random rnd; //Gerar aleatorio
+   public Baralho ( ) {
+	   rnd = new Random();
+	   //Criar o espaço das cartas
+	   cartas = new Carta[Carta.NAIPES.length * Carta.NUMEROS.length];
+	   cartaRetirada = new boolean[cartas.length];
+	   //Populando as cartas e cartaRetirada
+	   for(int i=0;1<cartas.length;i++) {
+		   cartas[i] = new Carta(i/Carta.NUMEROS.length,
+				                 i%Carta.NUMEROS.length);
+		   cartaRetirada[i] = false;
+	   }
+   }
+
+
+   public Carta getCartaSorteada() {
+	   int ind; 
+	   do {
+	       ind = rnd.nextInt(cartas.length);
+	       if (!cartaRetirada[ind]) {cartaRetirada[ind] = true; return cartas[ind];
+		   
+	   }
+   }while(true);
+   
+   }
+}
