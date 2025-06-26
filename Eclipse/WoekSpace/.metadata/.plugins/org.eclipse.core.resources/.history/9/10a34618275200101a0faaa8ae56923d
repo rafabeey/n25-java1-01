@@ -1,0 +1,13 @@
+package br.com.senaisp.bauru.aula07;
+
+import java.awt.Graphics;
+
+public final class Triangulo extends Desenho {
+
+	@Override
+	protected void desenharForma(Graphics g) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,23 @@
+package br.com.senaisp.bauru.aula07;
+
+import java.awt.Color;
+
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+
+public class DesenhoTeste {
+
+	public static void main(String[] args) {
+		JOptionPane pnl = new JOptionPane();
+		JDialog dlg = pnl.createDialog("Desenhos em java");
+		dlg.setSize(800, 600);
+		//Criando o desenho
+		Retangulo ret = new Retangulo(50, 50, 300, 200, Color.PINK);
+		
+		//Aplicando o desenho
+		dlg.setContentPane(ret);
+		//Mostrando a janela
+		dlg.setVisible(true);
+	}
+
+}

@@ -1,0 +1,13 @@
+package br.com.senaisp.bauru.aula07;
+
+import java.awt.Graphics;
+
+public class Retangulo extends Desenho {
+
+	@Override
+	protected void desenharForma(Graphics g) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

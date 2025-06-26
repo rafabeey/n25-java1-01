@@ -1,0 +1,7 @@
+package br.com.senaisp.bauru.aula07;
+
+import javax.swing.JPanel;
+
+public abstract class Desenho extends JPanel {
+
+}
